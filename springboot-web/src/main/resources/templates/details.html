@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <h1>Hola Mundo from Spring Boot!</h1>
+    <h1 th:text="${title}"/>
+
+    <p>Soy <b th:text="${name}"/>  <b th:text="${lastName}"/> </p>
+    
+    
 </body>
 </html>
