@@ -7,11 +7,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.estiben.curso.springboot.webapp.springboot_web.dto.UserDTO;
 import com.estiben.curso.springboot.webapp.springboot_web.models.User;
 
 @RestController
 @RequestMapping("api")
 public class UserRestController {
+
+    @GetMapping("details-dto")
+    public UserDTO detailsDTO(){
+        User user = new User("Estiben", "Fernández");
+        UserDTO userDTO = new UserDTO(
+            "Este es un titulo DTO",
+            user.getName().concat(" ").concat(user.getLastname()),
+            user);
+        return userDTO;
+    }
 
     @GetMapping("details")
     public Map<String, Object> details(){

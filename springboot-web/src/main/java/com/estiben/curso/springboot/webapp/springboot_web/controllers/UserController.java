@@ -10,6 +10,10 @@ import com.estiben.curso.springboot.webapp.springboot_web.models.User;
 @Controller
 public class UserController {
 
+
+
+
+
     @GetMapping("/details")
     public String details(Model model){
         User user = new User("Estiben", "Fernández");
