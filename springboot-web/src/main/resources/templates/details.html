@@ -9,6 +9,7 @@
     <h1 th:text="${title}"/>
 
     <p>Soy <b th:text="${user.name}"/>  <b th:text="${user.lastname}"/> </p>
+    <p th:text="${(user.email != null) ? user.email : 'No tiene email'}"></p>
     
     
 </body>
