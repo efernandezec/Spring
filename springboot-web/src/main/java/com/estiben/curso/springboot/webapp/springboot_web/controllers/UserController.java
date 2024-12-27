@@ -36,7 +36,7 @@ public class UserController {
     }
 
     @ModelAttribute("users")
-    // Manera para compartir información entre métodos
+    // Manera para compartir información de forma directa a la vista
     // Equivale a un model.addAttribute("users", users);
     public List<User> userList(){
         User user1 = new User("Estiben", "Fernández", "esfer@gmail.com");
