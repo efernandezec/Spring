@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.estiben.curso.springboot.webapp.springboot_web.dto.ParamDto;
 import com.estiben.curso.springboot.webapp.springboot_web.dto.ParamMixDto;
 
+import jakarta.servlet.http.HttpServletRequest;
+
+import java.util.concurrent.ExecutionException;
+
 import org.springframework.web.bind.annotation.GetMapping;
 
 
@@ -28,5 +32,23 @@ public class ParamController {
         ParamMixDto params = new ParamMixDto(text, code);
         return params;
     }
+
+    @GetMapping("/request")
+    public ParamMixDto request(HttpServletRequest request) {
+        Integer code = 0;
+        String message = request.getParameter("message");
+
+        try{
+            code = Integer.parseInt(request.getParameter("code"));
+        }
+        catch(NumberFormatException e){
+            System.out.println(e);
+
+        }
+        ParamMixDto paramsDto = new ParamMixDto(message, code);
+
+        return paramsDto;   
+    }
+    
     
 }
