@@ -4,12 +4,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.estiben.curso.springboot.webapp.springboot_web.dto.ParamDto;
+import com.estiben.curso.springboot.webapp.springboot_web.models.User;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 
@@ -31,6 +35,14 @@ public class PathVariableController {
         json.put("code", code);
         return json;
     }
+
+    @PostMapping("create")
+    public User create(@RequestBody User user) {
+        //TODO: process POST request
+        user.setName(user.getName().toUpperCase());
+        return user;
+    }
+    
     
     
 }
