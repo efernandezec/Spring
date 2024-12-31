@@ -9,8 +9,6 @@ import com.estiben.curso.springboot.webapp.springboot_web.dto.ParamMixDto;
 
 import jakarta.servlet.http.HttpServletRequest;
 
-import java.util.concurrent.ExecutionException;
-
 import org.springframework.web.bind.annotation.GetMapping;
 
 
@@ -33,6 +31,7 @@ public class ParamController {
         return params;
     }
 
+    // Query Params dinamicos
     @GetMapping("/request")
     public ParamMixDto request(HttpServletRequest request) {
         Integer code = 0;
