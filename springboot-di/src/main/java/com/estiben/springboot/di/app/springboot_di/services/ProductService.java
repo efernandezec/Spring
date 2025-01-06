@@ -16,8 +16,13 @@ public class ProductService {
             .stream()
             .map(product -> {
                 Double newPrice = product.getPrice()*1.25d;
-                product.setPrice(newPrice.longValue());
-                return product;
+
+                //Si no se usara el Cloneable en el Model
+                // Product newProduct = new Product(product.getId(), product.getName(), newPrice.longValue()); 
+                
+                Product newProduct = (Product) product.clone();
+                newProduct.setPrice(newPrice.longValue());
+                return newProduct;
             })
             .collect(Collectors.toList());
     }
