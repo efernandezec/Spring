@@ -17,7 +17,11 @@ public class ProductRepository {
         );
     }
 
-    public List<Product> findALl(){
+    public List<Product> findAll(){
         return this.data;
+    }
+
+    public Product getById(Long id){
+        return data.stream().filter(product -> product.getId().equals(id)).findFirst().orElse(null);
     }
 }
