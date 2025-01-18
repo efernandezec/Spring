@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.estiben.springboot.di.app.springboot_di.models.Product;
 
-public class ProductRepository {
+public class ProductRepository implements IProductRepository{
     private List<Product> data;
 
     public ProductRepository(){
@@ -17,10 +17,12 @@ public class ProductRepository {
         );
     }
 
+    @Override
     public List<Product> findAll(){
         return this.data;
     }
 
+    @Override
     public Product getById(Long id){
         return data.stream().filter(product -> product.getId().equals(id)).findFirst().orElse(null);
     }

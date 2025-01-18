@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import com.estiben.springboot.di.app.springboot_di.models.Product;
 import com.estiben.springboot.di.app.springboot_di.repositories.ProductRepository;
 
-public class ProductService {
+public class ProductService implements IProductService{
     private ProductRepository repository = new ProductRepository();
 
 
