@@ -3,11 +3,17 @@ package com.estiben.springboot.di.app.springboot_di.services;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.estiben.springboot.di.app.springboot_di.models.Product;
 import com.estiben.springboot.di.app.springboot_di.repositories.ProductRepository;
 
+@Component
 public class ProductService implements IProductService{
-    private ProductRepository repository = new ProductRepository();
+
+    @Autowired
+    private ProductRepository repository;
 
 
     public List<Product> findAll(){
