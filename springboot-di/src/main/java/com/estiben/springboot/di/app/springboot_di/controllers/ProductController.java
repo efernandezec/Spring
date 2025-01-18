@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.estiben.springboot.di.app.springboot_di.models.Product;
-import com.estiben.springboot.di.app.springboot_di.services.ProductService;
+import com.estiben.springboot.di.app.springboot_di.services.IProductService;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class ProductController {
 
     @Autowired
-    private ProductService service;
+    private IProductService service;
 
     @GetMapping("/products")
     public List<Product> findAll() {

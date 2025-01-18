@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.estiben.springboot.di.app.springboot_di.models.Product;
-import com.estiben.springboot.di.app.springboot_di.repositories.ProductRepository;
+import com.estiben.springboot.di.app.springboot_di.repositories.IProductRepository;
 
 @Component
 public class ProductService implements IProductService{
 
     @Autowired
-    private ProductRepository repository;
+    private IProductRepository repository;
 
 
     public List<Product> findAll(){
