@@ -9,7 +9,9 @@ import org.springframework.stereotype.Repository;
 import com.estiben.springboot.di.app.springboot_di.models.Product;
 
 @Primary
-@Repository
+// Cambio del nombre del repository
+// por defecto seria productRepositoryFoo
+@Repository("foo")
 public class ProductRepositoryFoo implements IProductRepository {
 
     @Override
